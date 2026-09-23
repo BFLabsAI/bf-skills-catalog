@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Thumb — texto puro</title>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="_layout.css">
+<style>
+.canvas { width:1280px; height:720px; --scale:1.05; --safe:64px; }
+.safe { justify-content:center; gap:var(--s-5); }
+.t { font-size: calc(150px * var(--scale)); line-height:.9; }
+.glow-blob { top:-140px; right:-120px; }
+</style>
+</head>
+<body>
+<div class="canvas" data-od-id="canvas">
+  <div class="glow-blob" aria-hidden="true"></div>
+  <div class="safe">
+    <span class="tag tag--mono start" data-od-id="tag">Base 1 · Equação da meta</span>
+    <h1 class="display t" data-od-id="headline">
+      Meta é conta.<br>Não é chute.
+    </h1>
+    <span class="plate start" style="height:56px"><img src="../assets/derivadas/ic-lockup-escuro.png" width="1704" height="342" alt="Programa Inteligência Comercial"></span>
+  </div>
+  <div class="ts-guard" aria-hidden="true"></div>
+</div>
+</body>
+</html>

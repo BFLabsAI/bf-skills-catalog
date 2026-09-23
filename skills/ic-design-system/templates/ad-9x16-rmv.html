@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Ad 9:16 — RMV</title>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="_layout.css">
+<style>
+.canvas { width:1080px; height:1920px; --scale:1; --safe:96px; }
+.split--photo-top { --photo: 56%; --fade: 24%; }
+.split__photo .tint > img { object-position: 44% 26%; }
+.safe { top:250px; bottom:250px; gap:var(--s-5); }
+.headline { font-size:104px; }
+.proof { display:flex; align-items:baseline; gap:var(--s-5); }
+.proof .metric { font-size:132px; }
+.proof p { max-width:18ch; }
+</style>
+</head>
+<body>
+<div class="canvas" data-od-id="canvas">
+  <div class="split split--photo-top" aria-hidden="true">
+    <div class="split__photo">
+      <div class="tint" style="height:100%">
+        <img src="../assets/fotos/conquista-bracos-erguidos.jpg" width="2400" height="1602" alt="">
+      </div>
+    </div>
+    <div class="split__body"></div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="frame" aria-hidden="true"></div>
+  <div class="dead-top" aria-hidden="true"></div>
+  <div class="dead-bottom" aria-hidden="true"></div>
+  <div class="safe">
+    <div class="spacer"></div>
+    <div class="meta-line" data-od-id="meta">
+      <span>Modelo Olímpico</span><span>RMV</span>
+    </div>
+    <hr class="hairline" data-od-id="rule">
+    <h1 class="display headline" data-od-id="headline">
+      Bronze, prata, ouro.<br><span class="hot">E o recorde.</span>
+    </h1>
+    <div class="proof" data-od-id="proof">
+      <p class="metric">110</p>
+      <p class="body">turmas rodaram o Modelo Olímpico até virar
+      <strong>Recorde Mundial de Vendas</strong>.</p>
+    </div>
+    <div class="stack stack--tight" style="margin-top:var(--s-5)" data-od-id="footer">
+      <span class="plate start" style="height:64px"><img src="../assets/derivadas/ic-lockup-escuro.png" width="1704" height="342" alt="Programa Inteligência Comercial"></span>
+      <a class="cta start" href="#" data-od-id="cta">Quero bater meu RMV</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+/* ==========================================================================
+   _layout.css — utilitários de composição compartilhados por todo template.
+   Importar SEMPRE depois de ../tokens.css.
+   Nenhum valor de cor, fonte ou espaço aqui: só arranjo.
+   ========================================================================== */
+
+.stack  { display: flex; flex-direction: column; gap: var(--s-5); }
+.stack--tight { gap: var(--s-3); }
+.row    { display: flex; align-items: center; gap: var(--s-5); }
+.row--between { justify-content: space-between; }
+.spacer { flex: 1; }
+.start  { align-self: flex-start; }
+
+/* Fundo fotográfico decorativo ----------------------------------------- */
+.bg      { position: absolute; inset: 0; }
+.bg img  { width: 100%; height: 100%; object-fit: cover; }
+
+/* Retrato lateral (thumb, ad 16:9) ------------------------------------- */
+.side-portrait { position: absolute; top: 0; right: 0; bottom: 0; width: 46%; }
+.side-portrait img { width: 100%; height: 100%; object-fit: cover; }
+.veil-side {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right,
+    var(--bg) 0%, var(--bg) 38%, rgba(9,7,7,0.88) 52%,
+    rgba(9,7,7,0.14) 78%, transparent 100%);
+}
+
+/* Zonas mortas de UI de app -------------------------------------------- */
+.dead-top, .dead-bottom { position: absolute; left: 0; right: 0; height: 250px; }
+.dead-top { top: 0; } .dead-bottom { bottom: 0; }
+/* Timestamp do YouTube: 140×60 no canto inferior direito. */
+.ts-guard { position: absolute; right: 0; bottom: 0; width: 140px; height: 60px; }
+/* Crop do grid do perfil no Reels: 1080×1440 centralizado. */
+.reels-crop { position: absolute; left: 0; right: 0; top: 240px; height: 1440px; }
+
+/* Recorte circular do WhatsApp ------------------------------------------ */
+.circle-safe {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 94px;                 /* quadrado inscrito no círculo de 640    */
+  text-align: center;
+}
+.circle-mask { border-radius: var(--r-pill); overflow: hidden; }
+
+/* Documento A4 ---------------------------------------------------------- */
+.page { display: flex; flex-direction: column; }
+.page + .page { margin-top: var(--s-6); }
+.page-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-bottom: var(--s-4); border-bottom: var(--stroke);
+}
+.page-foot {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: var(--s-4); border-top: var(--stroke);
+}
+.doc-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--s-4); }
+
+/* Grades genéricas ------------------------------------------------------ */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-5); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-5); }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-4); }
+
+/* Checklist ------------------------------------------------------------- */
+.check { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-4); }
+.check li {
+  display: grid; grid-template-columns: auto 1fr; gap: var(--s-4);
+  align-items: start;
+  font-size: var(--fs-md); line-height: var(--lh-snug); color: var(--fg);
+}
+.check li::before {
+  content: ""; width: 0.62em; height: 0.62em; margin-top: 0.42em; flex: none;
+  border: 2px solid var(--border); border-radius: var(--r-sm);
+}
+.check li.on::before { background: var(--fg); border-color: var(--fg); }
+
+
+/* Passo numerado -------------------------------------------------------- */
+.step-n {
+  font-family: var(--font-mono); font-weight: 700;
+  font-size: var(--fs-sm); color: var(--muted);
+  letter-spacing: 0.08em;
+}
+
+/* Marquee: repetição calculada — nunca palavra cortada ------------------ */
+.marquee__track > span { flex: none; }
+
+/* Viz: SVG escrito à mão ------------------------------------------------ */
+.viz { display: block; width: 100%; height: auto; }
+.viz foreignObject div { hyphens: none; overflow-wrap: break-word; }
+.viz .fill-accent { fill: var(--accent); }
+.viz .fill-surface { fill: var(--surface); }
+.viz .fill-ink { fill: var(--fg); }
+.viz .stroke-border { stroke: var(--border); stroke-width: 2; fill: none; }
+.viz .stroke-accent { stroke: var(--accent); stroke-width: 3; fill: none; }
+.viz text { font-family: var(--font-mono); fill: var(--fg); }
+.viz .lbl { font-family: var(--font-body); fill: var(--muted); }
+
+/* ==========================================================================
+   COMPOSIÇÃO — o texto nunca disputa espaço com o rosto.
+   ========================================================================== */
+
+/* Split vertical: foto ocupa uma banda, texto ocupa banda sólida.
+   A transição é graduada dentro da banda da foto, não por cima do texto. */
+.split { position: absolute; inset: 0; display: grid; }
+.split--photo-top    { grid-template-rows: var(--photo, 56%) 1fr; }
+.split--photo-bottom { grid-template-rows: 1fr var(--photo, 46%); }
+.split__photo { position: relative; overflow: hidden; }
+.split__photo::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -1px;
+  height: var(--fade, 30%);
+  background: linear-gradient(to top, var(--bg) 0%, rgba(9,7,7,.62) 46%, transparent 100%);
+}
+.split--photo-bottom .split__photo::after {
+  top: -1px; bottom: auto;
+  background: linear-gradient(to bottom, var(--bg) 0%, rgba(9,7,7,.72) 42%, transparent 100%);
+}
+.split__body { position: relative; background: var(--bg);
+               display: flex; flex-direction: column; justify-content: flex-end; }
+
+/* Split horizontal: coluna de foto + coluna de texto, com transição larga
+   que cobre TODA a largura do texto. */
+.split-h { position: absolute; inset: 0; display: grid;
+           grid-template-columns: 1fr var(--photo-col, 42%); }
+.split-h__photo { position: relative; overflow: hidden; }
+.split-h__photo::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(to right, var(--bg) 0%, rgba(9,7,7,.92) 34%,
+              rgba(9,7,7,.35) 72%, transparent 100%);
+}
+
+/* Checklist: rótulo e subtexto na MESMA coluna do grid. */
+.check li { display: flex; gap: var(--s-4); align-items: flex-start; }
+.check li > div { flex: 1; }
+.check li > div b { display: block; font-weight: 600; }
+.check li > div .sub { display: block; margin-top: 6px; font-size: .62em;
+                       line-height: 1.4; color: var(--muted); font-weight: 400; }

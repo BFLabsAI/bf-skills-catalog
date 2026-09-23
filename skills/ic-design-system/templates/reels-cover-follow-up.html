@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Reels cover — Follow-up</title>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="_layout.css">
+<style>
+.canvas { width:1080px; height:1920px; --scale:1; --safe:96px; }
+/* Todo texto legível fica dentro do crop central 1080x1440 do grid do perfil. */
+.safe { top:300px; bottom:300px; justify-content:center; gap:var(--s-6); }
+.bg img { object-position: 50% 18%; }
+.headline { font-size: calc(132px * var(--scale)); }
+</style>
+</head>
+<body>
+<div class="canvas" data-od-id="canvas">
+  <div class="bg" aria-hidden="true">
+    <img class="photo-grade" src="../assets/fotos/retrato-serio-tijolo-03.jpg" width="1602" height="2400" alt="">
+  </div>
+  <div class="veil" aria-hidden="true"></div>
+  <div class="reels-crop" aria-hidden="true"></div>
+  <div class="safe">
+    <div class="spacer"></div>
+    <h1 class="display headline" data-od-id="headline">
+      O follow-up<br><span class="hot">é rei.</span>
+    </h1>
+    <p class="body" data-od-id="support">80% das vendas caem entre o 5º e o 12º contato.</p>
+    <span class="plate start" style="height:60px" data-od-id="brand"><img src="../assets/derivadas/ic-lockup-escuro.png" width="1704" height="342" alt="Programa Inteligência Comercial"></span>
+  </div>
+</div>
+</body>
+</html>

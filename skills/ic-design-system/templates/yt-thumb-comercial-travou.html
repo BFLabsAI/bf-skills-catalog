@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Thumbnail YouTube — Comercial travou</title>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="_layout.css">
+<style>
+  .canvas {
+    width: 1280px;
+    height: 720px;
+    --scale: 1.05;
+    --safe: 64px;
+  }
+  .side-portrait img { object-position: 50% 22%; }
+  .safe { inset: var(--safe); width: 60%; justify-content: center; gap: var(--s-5); }
+  .thumb-title { font-size: calc(112px * var(--scale)); }
+  /* Zona reservada ao timestamp do YouTube: 140×60 no canto inferior direito. */
+</style>
+</head>
+<body>
+
+<div class="canvas" data-od-id="canvas">
+
+  <div class="side-portrait" aria-hidden="true">
+    <img class="photo-grade" src="../assets/fotos/retrato-serio-tijolo-01.jpg"
+         width="1602" height="2400" alt="">
+  </div>
+  <div class="veil-side" aria-hidden="true"></div>
+
+  <div class="safe">
+    <span class="tag tag--mono" style="align-self: flex-start;" data-od-id="tag">
+      Base 2 · Funil Ampulheta
+    </span>
+    <h1 class="display thumb-title" data-od-id="headline">
+      Seu comercial<br><span class="hot">travou.</span>
+    </h1>
+    <span class="plate" style="height: 56px; align-self: flex-start;" data-od-id="brand">
+      <img src="../assets/derivadas/ic-lockup-escuro.png" width="1704" height="342"
+           alt="Programa Inteligência Comercial">
+    </span>
+  </div>
+
+  <div class="ts-guard" aria-hidden="true"></div>
+</div>
+
+</body>
+</html>

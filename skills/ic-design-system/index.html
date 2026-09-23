@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design System Ramon Pessoa · Inteligência Comercial</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="tokens.css">
+<style>
+  body { display:block; }
+  .wrap { max-width:1180px; margin:0 auto; padding:80px 40px 120px; }
+  .top { display:flex; align-items:flex-end; justify-content:space-between;
+         gap:32px; flex-wrap:wrap; margin-bottom:56px; }
+  .brand { height:72px; }
+  .brand img { height:100%; width:auto; display:block; }
+  h1 { font-family:var(--font-display); font-variation-settings:"wdth" 70,"wght" 800;
+       text-transform:uppercase; font-size:64px; line-height:.96; letter-spacing:-.015em;
+       margin:20px 0 0; max-width:16ch; }
+  .lede { font-size:19px; line-height:1.55; color:var(--muted); max-width:52ch; margin:20px 0 0; }
+  .tokens { display:flex; gap:10px; flex-wrap:wrap; margin-top:28px; }
+  .sw { display:flex; align-items:center; gap:10px; padding:8px 14px;
+        border:var(--stroke); border-radius:var(--r-pill);
+        font-family:var(--font-mono); font-size:12px; color:var(--muted); }
+  .sw i { width:16px; height:16px; border-radius:var(--r-pill); display:block;
+          border:1px solid var(--border); }
+
+  section { margin-top:64px; }
+  .sec-head { display:flex; align-items:baseline; gap:16px; margin-bottom:22px; }
+  .sec-head h2 { font-family:var(--font-display); font-variation-settings:"wdth" 74,"wght" 800;
+       text-transform:uppercase; font-size:26px; letter-spacing:.02em; margin:0; }
+  .sec-head span { font-family:var(--font-mono); font-size:12px; letter-spacing:.16em;
+       text-transform:uppercase; color:var(--muted); }
+  .sec-head hr { flex:1; height:1px; background:var(--border); border:0; }
+
+  .cards { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+  a.tpl { display:flex; flex-direction:column; gap:10px; padding:20px;
+     border:var(--stroke); border-radius:var(--r-md); background:var(--surface);
+     text-decoration:none; box-shadow:var(--highlight);
+     transition:background var(--dur) var(--ease), border-color var(--dur) var(--ease); }
+  a.tpl:hover { background:var(--surface-2); border-color:var(--muted); }
+  a.tpl:focus-visible { outline:3px solid var(--fg); outline-offset:3px; }
+  a.tpl b { font-family:var(--font-body); font-size:16px; font-weight:600; color:var(--fg); }
+  a.tpl em { font-style:normal; font-family:var(--font-mono); font-size:11.5px;
+     letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
+  a.tpl p { margin:0; font-size:14px; line-height:1.45; color:var(--muted); }
+  .ratio { height:4px; border-radius:2px; background:var(--border); overflow:hidden; }
+  .ratio i { display:block; height:100%; background:var(--muted); }
+
+  footer { margin-top:80px; padding-top:28px; border-top:var(--stroke);
+     display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap;
+     font-size:13.5px; color:var(--muted); }
+  footer a { color:var(--fg); }
+
+  @media (max-width:960px) { .cards { grid-template-columns:repeat(2,1fr); } h1 { font-size:44px; } }
+  @media (max-width:600px) { .cards { grid-template-columns:1fr; } .wrap { padding:48px 20px 80px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top" data-od-id="header">
+    <div>
+      <span class="plate brand"><img src="assets/derivadas/ic-lockup-escuro.png"
+            width="1704" height="342" alt="Programa Inteligência Comercial"></span>
+      <h1>Biblioteca de templates</h1>
+      <p class="lede">Sete categorias, vinte e oito peças. Cada arquivo é um canvas
+      único que exporta em PNG ou PDF. Todos herdam <code>tokens.css</code> — trocar
+      um token muda a biblioteca inteira.</p>
+      <div class="tokens">
+        <span class="sw"><i style="background:var(--bg)"></i>#090707 canvas</span>
+        <span class="sw"><i style="background:var(--surface)"></i>#151111 superfície</span>
+        <span class="sw"><i style="background:var(--fg)"></i>#FFFFFF tinta</span>
+        <span class="sw"><i style="background:var(--muted)"></i>#B4ACAC apoio</span>
+        <span class="sw"><i style="background:var(--accent)"></i>#FF0A05 acento</span>
+        <span class="sw">Archivo · Poppins · JetBrains Mono</span>
+      </div>
+    </div>
+    <a class="cta" href="DESIGN.md" data-od-id="cta-design">Ler o DESIGN.md</a>
+  </header>
+
+  <section data-od-id="sec-ads">
+    <div class="sec-head"><h2>1 · Ads</h2><span>4 proporções</span><hr></div>
+    <div class="cards">
+      <a class="tpl" href="templates/ad-1x1-metas.html"><em>1:1 · 1080×1080</em><div class="ratio"><i style="width:100%"></i></div><b>Metas lucrativas</b><p>Meta não é chute, é equação. Foto apontando para a câmera.</p></a>
+      <a class="tpl" href="templates/ad-4x5-follow-up.html"><em>4:5 · 1080×1350</em><div class="ratio"><i style="width:80%"></i></div><b>Follow-up</b><p>O vendedor que para no segundo contato. Prova com 80%.</p></a>
+      <a class="tpl" href="templates/ad-9x16-rmv.html"><em>9:16 · 1080×1920</em><div class="ratio"><i style="width:56%"></i></div><b>RMV</b><p>Modelo Olímpico. Zonas mortas de 250px respeitadas.</p></a>
+      <a class="tpl" href="templates/ad-16x9-sic-ic.html"><em>16:9 · 1920×1080</em><div class="ratio"><i style="width:100%"></i></div><b>SIC × IC</b><p>Comparativo de dois estados, retrato lateral.</p></a>
+    </div>
+  </section>
+
+  <section data-od-id="sec-stories">
+    <div class="sec-head"><h2>2 · Stories e Reels covers</h2><span>4 peças</span><hr></div>
+    <div class="cards">
+      <a class="tpl" href="templates/story-diagnostico.html"><em>Story · 1080×1920</em><div class="ratio"><i style="width:56%"></i></div><b>Enquete de diagnóstico</b><p>Régua de maturidade em três opções.</p></a>
+      <a class="tpl" href="templates/story-bastidor-imersao.html"><em>Story · 1080×1920</em><div class="ratio"><i style="width:56%"></i></div><b>Bastidor da imersão</b><p>Foto de palco com véu e prova de método.</p></a>
+      <a class="tpl" href="templates/reels-cover-follow-up.html"><em>Cover · crop 1080×1440</em><div class="ratio"><i style="width:56%"></i></div><b>O follow-up é rei</b><p>Texto inteiro dentro do crop do grid do perfil.</p></a>
+      <a class="tpl" href="templates/reels-cover-4-bases.html"><em>Cover · série</em><div class="ratio"><i style="width:56%"></i></div><b>Série 4 Bases</b><p>Tipografia pura com indicador de episódio.</p></a>
+    </div>
+  </section>
+
+  <section data-od-id="sec-onepagers">
+    <div class="sec-head"><h2>3 · One-pagers</h2><span>4 documentos</span><hr></div>
+    <div class="cards">
+      <a class="tpl" href="templates/onepager-a4-diagnostico.html"><em>A4 · 794×1123</em><div class="ratio"><i style="width:71%"></i></div><b>Diagnóstico comercial</b><p>Leitura das 4 bases com KPIs e ação recomendada.</p></a>
+      <a class="tpl" href="templates/onepager-a4-proposta.html"><em>A4 · 794×1123</em><div class="ratio"><i style="width:71%"></i></div><b>Proposta de mentoria</b><p>Escopo por ciclo de 90 dias e pré-requisitos.</p></a>
+      <a class="tpl" href="templates/onepager-a4-land-sumario.html"><em>A4 paisagem · 1123×794</em><div class="ratio"><i style="width:100%"></i></div><b>Sumário executivo</b><p>Painel de conselho: estado por base e decisão pendente.</p></a>
+      <a class="tpl" href="templates/onepager-a4-relatorio-turma.html"><em>A4 · 2 páginas</em><div class="ratio"><i style="width:71%"></i></div><b>Relatório de turma</b><p>Pós-treinamento, com fonte dos dados declarada.</p></a>
+    </div>
+  </section>
+
+  <section data-od-id="sec-infograficos">
+    <div class="sec-head"><h2>4 · Infográficos</h2><span>SVG escrito à mão</span><hr></div>
+    <div class="cards">
+      <a class="tpl" href="templates/info-processo-4-bases.html"><em>Processo · 1080</em><div class="ratio"><i style="width:80%"></i></div><b>As 4 Bases</b><p>Capa com retrato, stepper editorial e faixa de fundamento P3P3.</p></a>
+      <a class="tpl" href="templates/info-funil-ampulheta.html"><em>Processo · 1080</em><div class="ratio"><i style="width:66%"></i></div><b>Funil Ampulheta</b><p>Sete etapas com rótulo e anotação fora da forma; venda como pivô.</p></a>
+      <a class="tpl" href="templates/info-planejamento-modelo-olimpico.html"><em>Planejamento · 1080</em><div class="ratio"><i style="width:80%"></i></div><b>Modelo Olímpico</b><p>Pódio de quatro degraus até o RMV e a equação de 10 variáveis.</p></a>
+      <a class="tpl" href="templates/info-report-follow-up.html"><em>Report · 1080</em><div class="ratio"><i style="width:80%"></i></div><b>Report do follow-up</b><p>Barras anotadas e leitura dominante em 80%.</p></a>
+    </div>
+  </section>
+
+  <section data-od-id="sec-quotes">
+    <div class="sec-head"><h2>5 · Quote cards</h2><span>frase e checklist</span><hr></div>
+    <div class="cards">
+      <a class="tpl" href="templates/quote-1x1-caixa-e-rei.html"><em>Frase · 1080×1080</em><div class="ratio"><i style="width:100%"></i></div><b>Caixa é rei</b><p>Tipografia pura, sem moldura e sem aspas decorativas.</p></a>
+      <a class="tpl" href="templates/quote-4x5-metas.html"><em>Frase · 1080×1350</em><div class="ratio"><i style="width:80%"></i></div><b>Sem metas comerciais</b><p>Tese de abertura sobre retrato tratado.</p></a>
+      <a class="tpl" href="templates/quote-1x1-checklist-cadencias.html"><em>Checklist · 1080×1080</em><div class="ratio"><i style="width:100%"></i></div><b>As 4 cadências</b><p>Quatro itens com marcador de estado.</p></a>
+      <a class="tpl" href="templates/quote-4x5-checklist-p3p3.html"><em>Checklist · 1080×1350</em><div class="ratio"><i style="width:80%"></i></div><b>Fundamentos P3P3</b><p>Três pilares com subtexto explicativo.</p></a>
+    </div>
+  </section>
+
+  <section data-od-id="sec-whatsapp">
+    <div class="sec-head"><h2>6 · WhatsApp Media</h2><span>recorte circular</span><hr></div>
+    <div class="cards">
+      <a class="tpl" href="templates/wa-profile-ramon.html"><em>Perfil · 640×640</em><div class="ratio"><i style="width:100%"></i></div><b>Foto do Ramon</b><p>Rosto no círculo inscrito, anel de marca.</p></a>
+      <a class="tpl" href="templates/wa-profile-vendedor.html"><em>Perfil · time</em><div class="ratio"><i style="width:100%"></i></div><b>Vendedor / consultor</b><p>Só o rosto: a 48px nada além disso é legível.</p></a>
+      <a class="tpl" href="templates/wa-group-turma.html"><em>Grupo · 640×640</em><div class="ratio"><i style="width:100%"></i></div><b>Turma da mentoria</b><p>Símbolo, número da turma e programa.</p></a>
+      <a class="tpl" href="templates/wa-banner-1x1-turma.html"><em>Banner · 1080×1080</em><div class="ratio"><i style="width:100%"></i></div><b>Turma nova</b><p>Anúncio 1:1 com retrato tratado e CTA de conversa.</p></a>
+    </div>
+  </section>
+
+  <section data-od-id="sec-youtube">
+    <div class="sec-head"><h2>7 · Thumbnails de YouTube</h2><span>1280×720</span><hr></div>
+    <div class="cards">
+      <a class="tpl" href="templates/yt-thumb-comercial-travou.html"><em>Texto + imagem</em><div class="ratio"><i style="width:100%"></i></div><b>Seu comercial travou</b><p>Retrato à direita, texto à esquerda.</p></a>
+      <a class="tpl" href="templates/yt-thumb-texto-puro-meta.html"><em>Só HTML</em><div class="ratio"><i style="width:100%"></i></div><b>Meta é conta</b><p>Sem foto: tipografia dominante e halo único.</p></a>
+      <a class="tpl" href="templates/yt-thumb-rico-follow-up.html"><em>HTML rico + imagem</em><div class="ratio"><i style="width:100%"></i></div><b>Ninguém liga de novo</b><p>Barras de dado ao lado do retrato.</p></a>
+      <a class="tpl" href="templates/yt-thumb-rico-rmv.html"><em>HTML rico + imagem</em><div class="ratio"><i style="width:100%"></i></div><b>Recorde mundial</b><p>Pódio em miniatura sobre foto de palco.</p></a>
+    </div>
+  </section>
+
+  <footer data-od-id="footer">
+    <p>Programa Inteligência Comercial® · Ramon Pessoa · R7 Treinamentos</p>
+    <p><a href="brand-spec.md">brand-spec</a> · <a href="surfaces.md">surfaces</a> ·
+       <a href="checklist.md">checklist</a> · <a href="PLANO.md">plano</a></p>
+  </footer>
+
+</div>
+</body>
+</html>

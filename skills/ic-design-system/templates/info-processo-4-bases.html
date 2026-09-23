@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Infográfico — As 4 Bases</title>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="_layout.css">
+<style>
+.canvas { width:1080px; height:auto; --scale:1; --safe:0; }
+.safe { position:relative; inset:auto; padding:0; gap:0; }
+.pad { padding:0 var(--s-10); }
+.h1 { font-size:96px; line-height:.94; }
+.deck { font-size:30px; line-height:1.45; color:var(--muted); max-width:40ch; margin:0; }
+.sect { padding-top:var(--s-9); }
+
+.hero { position:relative; height:600px; overflow:hidden; }
+.hero__photo { position:absolute; top:0; right:0; bottom:0; width:46%; overflow:hidden; }
+.hero__photo .tint { height:100%; }
+.hero__photo .tint > img { object-position: 52% 16%; }
+.hero__photo::after { content:""; position:absolute; inset:0;
+  background:linear-gradient(to right, var(--bg) 0%, rgba(9,7,7,.94) 30%,
+             rgba(9,7,7,.34) 72%, transparent 100%); }
+.hero__txt { position:absolute; left:var(--s-10); bottom:var(--s-8); width:64%; }
+.foot { display:flex; align-items:center; justify-content:space-between; gap:var(--s-6);
+  padding:var(--s-8) var(--s-10) var(--s-10); }
+</style>
+</head>
+<body>
+<div class="canvas" data-od-id="canvas">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="safe">
+
+    <div class="hero" data-od-id="hero">
+      <div class="hero__photo">
+        <div class="tint"><img src="../assets/fotos/retrato-serio-tijolo-02.jpg"
+             width="1602" height="2400" alt="Ramon Pessoa"></div>
+      </div>
+      <div class="hero__txt">
+        <div class="meta-line" style="--scale:1"><span>Programa Inteligência Comercial®</span><span>Processo</span></div>
+        <hr class="hairline" style="margin:20px 0 24px">
+        <h1 class="display h1" data-od-id="headline">
+          As quatro bases<br>de um sistema<br><span class="hot">comercial.</span>
+        </h1>
+      </div>
+    </div>
+
+    <div class="pad sect" data-od-id="intro">
+      <p class="deck">Não é treinamento de técnica de venda. É a arquitetura de uma
+      operação comercial orientada a dado — construída na ordem, uma base sobre a outra.</p>
+    </div>
+
+    <div class="pad sect" data-od-id="bases">
+      <div class="step" data-od-id="base-01">
+        <div class="step__n">01</div>
+        <div><p class="step__verb">Estruturando</p>
+          <p class="step__label">Metas lucrativas. A meta deixa de ser desejo e vira
+          equação: dez variáveis reais, do teto fabril ao crescimento proposto.</p>
+          <p class="step__meta">Competência × caixa · régua de maturidade</p></div>
+      </div>
+      <div class="step" data-od-id="base-02">
+        <div class="step__n">02</div>
+        <div><p class="step__verb">Construindo</p>
+          <p class="step__label">Receita previsível. O funil não termina na venda —
+          continua em retenção, lealdade e indicação.</p>
+          <p class="step__meta">Funil Ampulheta · método FCJ · 4 cadências</p></div>
+      </div>
+      <div class="step" data-od-id="base-03">
+        <div class="step__n">03</div>
+        <div><p class="step__verb">Otimizando</p>
+          <p class="step__label">Crescimento estratégico. Cada real investido em
+          aquisição passa a ter payback conhecido.</p>
+          <p class="step__meta">CAC · LTV · NPS · margem</p></div>
+      </div>
+      <div class="step step--now" data-od-id="base-04">
+        <div class="step__n">04</div>
+        <div><p class="step__verb">Controlando</p>
+          <p class="step__label">Performance por indicadores. A cadência sustenta o
+          contato até o 12º ponto, que é onde a venda realmente acontece.</p>
+          <p class="step__meta">KPIs · forecast · volume de atividades</p></div>
+      </div>
+    </div>
+
+    <div class="pad sect" data-od-id="fundamento">
+      <div class="meta-line" style="margin-bottom:20px"><span>Antes das bases</span><span>Fundamentos P3P3</span></div>
+      <div class="foundation">
+        <div><b>Pessoas</b><span>Talento no lugar certo, meritocracia e PDI.</span></div>
+        <div><b>Processos</b><span>Rotina sequenciada, sem gargalo manual.</span></div>
+        <div><b>Produtos</b><span>Margem lucrativa e capacidade de escalar.</span></div>
+      </div>
+    </div>
+
+    <div class="foot" data-od-id="footer">
+      <span class="plate" style="height:60px"><img src="../assets/derivadas/ic-lockup-escuro.png" width="1704" height="342" alt="Programa Inteligência Comercial"></span>
+      <p class="caption" style="text-align:right">Método Inteligência Comercial®<br>
+      14 anos · +5.000 empresas · 110 turmas</p>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

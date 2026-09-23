@@ -1,0 +1,16 @@
+{
+  "name": "ic-design-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Design System Ramon Pessoa / Programa Inteligência Comercial — 28 templates em canvas fixo, operados por agentes CLI.",
+  "type": "module",
+  "scripts": {
+    "export": "node scripts/export.mjs",
+    "export:pdf": "node scripts/export.mjs --pdf",
+    "serve": "npx --yes serve -l 4180 .",
+    "postinstall": "playwright install chromium"
+  },
+  "devDependencies": {
+    "playwright": "^1.49.0"
+  }
+}

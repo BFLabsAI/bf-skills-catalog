@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Infográfico — Report do follow-up</title>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="_layout.css">
+<style>
+.canvas { width:1080px; height:auto; --scale:1; --safe:0; }
+.safe { position:relative; inset:auto; padding:0; gap:0; }
+.pad { padding:0 var(--s-10); }
+.h1 { font-size:96px; line-height:.94; }
+.deck { font-size:30px; line-height:1.45; color:var(--muted); max-width:40ch; margin:0; }
+.sect { padding-top:var(--s-9); }
+.foot { display:flex; align-items:center; justify-content:space-between; gap:var(--s-6);
+  padding:var(--s-8) var(--s-10) var(--s-10); }
+
+.hero { position:relative; height:560px; overflow:hidden; }
+.hero__photo { position:absolute; top:0; right:0; bottom:0; width:44%; overflow:hidden; }
+.hero__photo .tint { height:100%; }
+.hero__photo .tint > img { object-position: 52% 14%; }
+.hero__photo::after { content:""; position:absolute; inset:0;
+  background:linear-gradient(to right, var(--bg) 0%, rgba(9,7,7,.94) 30%,
+             rgba(9,7,7,.34) 72%, transparent 100%); }
+.hero__txt { position:absolute; left:var(--s-10); bottom:var(--s-8); width:66%; }
+.viz text.lb { font-family:var(--font-mono); font-size:19px; letter-spacing:.1em;
+  text-transform:uppercase; fill:var(--muted); }
+.viz text.pc { font-family:var(--font-mono); font-size:30px; font-weight:700;
+  fill:var(--fg); }
+.readout .metric { font-size:132px; }
+</style>
+</head>
+<body>
+<div class="canvas" data-od-id="canvas">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="safe">
+    <div class="hero" data-od-id="hero">
+      <div class="hero__photo">
+        <div class="tint"><img src="../assets/fotos/retrato-serio-tijolo-03.jpg"
+             width="1602" height="2400" alt="Ramon Pessoa"></div>
+      </div>
+      <div class="hero__txt">
+        <div class="meta-line"><span>PIC® · Base 04</span><span>Report do follow-up</span></div>
+        <hr class="hairline" style="margin:22px 0 26px">
+        <h1 class="display h1" data-od-id="headline">Só 10% chegam<br>onde a venda<br><span class="hot">acontece.</span></h1>
+      </div>
+    </div>
+
+    <div class="pad sect" data-od-id="intro">
+      <p class="deck">Distribuição de esforço dos vendedores no mercado brasileiro,
+      medida por quantos contatos fazem antes de desistir.</p>
+    </div>
+
+    <div class="pad sect">
+      <svg class="viz" viewBox="0 0 700 450" role="img" data-od-id="viz-followup"
+           aria-label="48% nunca fazem o segundo contato, 25% param no segundo, 12% fazem três, 10% fazem quatro ou mais">
+        
+      <g data-od-id="barra-1">
+        <text x="0" y="40" class="lb">Nunca fazem o 2º contato</text>
+        <rect x="0" y="54" width="560" height="40" rx="5" fill="#151111"/>
+        <rect x="0" y="54" width="560" height="40" rx="5"
+              fill="#B4ACAC"/>
+        <text x="586" y="84" class="pc">48%</text>
+      </g>
+      <g data-od-id="barra-2">
+        <text x="0" y="144" class="lb">Param no 2º contato</text>
+        <rect x="0" y="158" width="560" height="40" rx="5" fill="#151111"/>
+        <rect x="0" y="158" width="292" height="40" rx="5"
+              fill="#B4ACAC"/>
+        <text x="586" y="188" class="pc">25%</text>
+      </g>
+      <g data-od-id="barra-3">
+        <text x="0" y="248" class="lb">Fazem 3 contatos</text>
+        <rect x="0" y="262" width="560" height="40" rx="5" fill="#151111"/>
+        <rect x="0" y="262" width="140" height="40" rx="5"
+              fill="#B4ACAC"/>
+        <text x="586" y="292" class="pc">12%</text>
+      </g>
+      <g data-od-id="barra-4">
+        <text x="0" y="352" class="lb">Fazem 4 ou mais</text>
+        <rect x="0" y="366" width="560" height="40" rx="5" fill="#151111"/>
+        <rect x="0" y="366" width="117" height="40" rx="5"
+              fill="var(--accent)"/>
+        <text x="586" y="396" class="pc">10%</text>
+      </g>
+        <line x1="0" y1="446" x2="700" y2="446" class="stroke-border"/>
+      </svg>
+    </div>
+
+    <div class="pad sect" data-od-id="conclusao">
+      <div class="readout">
+        <p class="metric">80%</p>
+        <div><p class="eyebrow" style="margin-bottom:10px">A conta que interessa</p>
+          <p class="body" style="max-width:none;font-size:27px">das vendas acontecem entre o
+          <strong>5º e o 12º contato</strong>. Quem encerra a cadência antes disso não tem
+          problema de marketing — tem problema de cadência, e está deixando a maior
+          parte do faturamento na mesa.</p></div>
+      </div>
+    </div>
+
+    <div class="foot" data-od-id="footer">
+      <span class="plate" style="height:60px"><img src="../assets/derivadas/ic-lockup-escuro.png" width="1704" height="342" alt="Programa Inteligência Comercial"></span>
+      <p class="caption" style="text-align:right">Responder o lead em até 5 minutos<br>
+      multiplica a taxa de contato efetivo</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

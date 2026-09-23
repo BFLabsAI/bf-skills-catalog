@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>WhatsApp — Perfil do time</title>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="_layout.css">
+<style>
+.canvas { width:640px; height:640px; --scale:.6; }
+.bg .tint { height:100%; }
+.bg .tint > img { object-position: 50% 50%; }
+.ring { position:absolute; inset:0; border-radius:var(--r-pill);
+  box-shadow: inset 0 0 0 7px var(--bg), inset 0 0 0 9px var(--accent); }
+</style>
+</head>
+<body>
+<div class="canvas circle-mask" data-od-id="canvas">
+  <div class="bg" aria-hidden="true">
+    <div class="tint tint--neutral">
+      <img src="../assets/derivadas/ramon-rosto-serio-640.jpg" width="640" height="640"
+           alt="Ramon Pessoa">
+    </div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="ring" aria-hidden="true"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>One-pager A4 — Relatório de turma (2 páginas)</title>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="_layout.css">
+<style>
+.canvas { width:794px; height:1123px; --scale:.34; --safe:68px; }
+.safe { justify-content:flex-start; gap:20px; }
+.page-head img { height:26px; width:auto; display:block; }
+.page-head .caption, .page-foot .caption { font-size:11px; }
+.doc-h1 { font-family:var(--font-display); font-variation-settings:"wdth" 70,"wght" 800;
+  text-transform:uppercase; font-size:34px; line-height:1.02; letter-spacing:-.01em; margin:0; }
+.doc-h2 { font-family:var(--font-display); font-variation-settings:"wdth" 78,"wght" 700;
+  text-transform:uppercase; font-size:15px; letter-spacing:.06em; margin:0 0 8px; }
+.doc-p  { font-size:12px; line-height:1.5; color:var(--muted); margin:0; }
+.doc-p strong { color:var(--fg); font-weight:600; }
+.doc-lbl { font-family:var(--font-mono); font-size:10px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--muted); margin:0 0 6px; }
+.kpi { font-family:var(--font-mono); font-variant-numeric:tabular-nums;
+  font-size:30px; font-weight:700; line-height:1; margin:0; }
+.box { border:var(--stroke); border-radius:10px; padding:14px; background:var(--surface); }
+table { width:100%; border-collapse:collapse; font-size:11.5px; }
+th,td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--border);
+  vertical-align:top; line-height:1.4; }
+th { font-family:var(--font-mono); font-size:10px; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--muted); font-weight:500; }
+td { color:var(--muted); } td:first-child { color:var(--fg); font-weight:500; }
+</style>
+</head>
+<body>
+<div class="canvas page" data-od-id="canvas-p1">
+  <div class="safe">
+    <div class="page-head"><span class="plate" style="height:38px"><img src="../assets/derivadas/ic-lockup-escuro.png" width="1704" height="342" alt="Programa Inteligência Comercial"></span>
+      <p class="caption">Relatório de turma · Página 1</p></div>
+    <p class="doc-lbl">Pós-treinamento</p>
+    <h1 class="doc-h1" data-od-id="title">O que a turma<br><span class="hot">levou para a operação</span></h1>
+    <p class="doc-p" style="max-width:62ch">Consolidação de presença, aplicação e
+    indicadores declarados pelas empresas participantes ao fim do ciclo.</p>
+    <div class="grid-4" style="gap:10px">
+      <div class="box"><p class="doc-lbl">Empresas na turma</p><p class="kpi">38</p></div>
+      <div class="box"><p class="doc-lbl">Presença média</p><p class="kpi">92%</p></div>
+      <div class="box"><p class="doc-lbl">Equação da meta feita</p><p class="kpi">31</p></div>
+      <div class="box"><p class="doc-lbl">Cadência implantada</p><p class="kpi">24</p></div>
+    </div>
+    <div>
+      <h2 class="doc-h2">Aplicação por base</h2>
+      <table>
+        <thead><tr><th>Base</th><th>Ferramenta entregue</th><th>Empresas aplicando</th></tr></thead>
+        <tbody>
+          <tr><td>1 · Estruturando</td><td>Equação da meta · 10 variáveis</td><td>31 de 38</td></tr>
+          <tr><td>2 · Construindo</td><td>Funil Ampulheta · método FCJ</td><td>27 de 38</td></tr>
+          <tr><td>3 · Otimizando</td><td>CAC, LTV e payback</td><td>19 de 38</td></tr>
+          <tr><td>4 · Controlando</td><td>Cadências e volume de atividades</td><td>24 de 38</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="caption" data-od-id="fonte">Dados declarados pelas próprias empresas no formulário de
+    encerramento da turma. Não auditados.</p>
+    <div class="spacer"></div>
+    <div class="page-foot"><p class="caption">Programa Inteligência Comercial®</p>
+      <p class="caption">Página 1 de 2</p></div>
+  </div>
+</div>
+
+<div class="canvas page" data-od-id="canvas-p2">
+  <div class="safe">
+    <div class="page-head"><span class="plate" style="height:38px"><img src="../assets/derivadas/ic-lockup-escuro.png" width="1704" height="342" alt="Programa Inteligência Comercial"></span>
+      <p class="caption">Relatório de turma · Página 2</p></div>
+    <h2 class="doc-h2">Fauna comercial mapeada</h2>
+    <table>
+      <thead><tr><th>Perfil</th><th>Lema</th><th>Alocação recomendada</th></tr></thead>
+      <tbody>
+        <tr><td>Tubarão</td><td>Fazer rápido</td><td>SDR, hunter, CEO</td></tr>
+        <tr><td>Lobo</td><td>Fazer certo</td><td>Gerente comercial, farmer</td></tr>
+        <tr><td>Águia</td><td>Fazer diferente</td><td>CEO, estratégia</td></tr>
+        <tr><td>Gato</td><td>Fazer junto</td><td>Pós-venda, sucesso do cliente</td></tr>
+      </tbody>
+    </table>
+    <h2 class="doc-h2" style="margin-top:14px">Próximo ciclo</h2>
+    <div class="grid-2" style="gap:12px">
+      <div class="box"><p class="doc-p"><strong>Prioridade 1.</strong> Fechar a cadência
+      de base e embaixadores nas 14 empresas que ainda não implantaram.</p></div>
+      <div class="box"><p class="doc-p"><strong>Prioridade 2.</strong> Instrumentar
+      CAC e LTV nas 19 empresas sem unit economics medidos.</p></div>
+    </div>
+    <div class="spacer"></div>
+    <div class="page-foot"><p class="caption">Programa Inteligência Comercial®</p>
+      <p class="caption">Página 2 de 2</p></div>
+  </div>
+</div>
+</body>
+</html>

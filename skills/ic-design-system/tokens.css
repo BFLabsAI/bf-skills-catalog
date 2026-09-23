@@ -1,0 +1,459 @@
+/* ==========================================================================
+   Design System Ramon Pessoa / Inteligência Comercial — tokens.css
+   Fonte única de verdade. Nenhum template declara cor, fonte, espaçamento
+   ou raio fora daqui.
+
+   Paleta e tipografia MEDIDAS dos ativos reais — ver brand-spec.md.
+   Preto e vermelho. Sem azul, sem ouro, sem terceira cor.
+   ========================================================================== */
+
+:root {
+  /* --- Superfícies (preto quente medido dos criativos) ----------------- */
+  --bg:            #090707;
+  --surface:       #151111;
+  --surface-2:     #1E1818;   /* faixa alternada, célula de tabela        */
+  --border:        #2E2626;
+
+  /* --- Tinta: hierarquia por opacidade, nunca por nova cor ------------- */
+  --fg:            #FFFFFF;
+  --muted:         #B4ACAC;
+  --ink-low:       rgba(255, 255, 255, 0.58);
+  --ink-ambient:   rgba(255, 255, 255, 0.10);
+
+  /* --- Acento: vermelho exato da logo IC ------------------------------- */
+  --accent:        #FF0A05;
+  --accent-press:  oklch(0.545 0.222 29.5);   /* hover/pressed — mais escuro,
+                                                 aumenta contraste do texto  */
+  --accent-soft:   oklch(0.628 0.257 29.5 / 0.14);  /* fundo de chip        */
+  --accent-line:   oklch(0.628 0.257 29.5 / 0.42);  /* filete, conector     */
+  --accent-glow:   oklch(0.628 0.257 29.5 / 0.30);  /* halo — nunca sombra  */
+
+  /* --- Tipografia ------------------------------------------------------ */
+  --font-display: "Archivo", "Archivo Narrow", "Helvetica Neue Condensed",
+                  Impact, sans-serif;
+  --font-body:    "Poppins", system-ui, -apple-system, "Segoe UI", Arial,
+                  sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo,
+                  monospace;
+
+  /* Eixos variáveis da Archivo — condensada e pesada, como nos criativos */
+  --display-wdth: 70;
+  --display-wght: 800;
+
+  /* --- Escala tipográfica (base: canvas de 1080px) --------------------- */
+  /* Cada superfície declara seu --scale. Ver surfaces.md.                */
+  --scale: 1;
+  --fs-mega:    calc(120px * var(--scale));
+  --fs-xl:      calc(82px  * var(--scale));
+  --fs-lg:      calc(58px  * var(--scale));
+  --fs-md:      calc(42px  * var(--scale));
+  --fs-body:    calc(32px  * var(--scale));
+  --fs-sm:      calc(26px  * var(--scale));
+  --fs-eyebrow: calc(20px  * var(--scale));
+
+  --lh-display: 0.94;
+  --lh-snug:    1.18;
+  --lh-body:    1.45;
+  --tr-display: -0.015em;
+  --tr-eyebrow:  0.22em;
+
+  /* --- Espaçamento: escala 4px ----------------------------------------- */
+  --s-1: 4px;   --s-2: 8px;   --s-3: 12px;  --s-4: 16px;
+  --s-5: 24px;  --s-6: 32px;  --s-7: 48px;  --s-8: 64px;
+  --s-9: 80px;  --s-10: 96px; --s-11: 128px;
+
+  /* --- Raio ------------------------------------------------------------ */
+  --r-sm: 6px;  --r-md: 14px;  --r-lg: 22px;  --r-pill: 9999px;
+
+  /* --- Profundidade: camadas, nunca drop shadow preto ------------------ */
+  --stroke:    1px solid var(--border);
+  --highlight: inset 0 1px 0 rgba(255, 255, 255, 0.10);
+  --glow:      0 0 90px var(--accent-glow);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur:  240ms;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0; padding: 0;
+  /* Fundo da moldura = fundo da marca, para que qualquer sobra de viewport
+     no preview não vire faixa branca ao redor da peça. */
+  width: 100%;
+  background: var(--bg);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body { display: flex; justify-content: center; align-items: flex-start; }
+
+/* O .canvas é o único elemento exportado. Dimensão vem do template. */
+.canvas {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--fg);
+  margin: 0;
+}
+
+/* Área segura — nada de conteúdo fora dela. */
+.safe {
+  position: absolute;
+  inset: var(--safe, var(--s-9));
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   Tipografia
+   ========================================================================== */
+
+.display, .title {
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" var(--display-wdth), "wght" var(--display-wght);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: var(--lh-display);
+  letter-spacing: var(--tr-display);
+  margin: 0;
+  text-wrap: balance;               /* evita órfã na última linha          */
+}
+.display { font-size: var(--fs-xl); }
+.title   { font-size: var(--fs-lg); }
+
+/* Ênfase padrão da marca: a segunda linha da manchete em vermelho.
+   Substitui negrito, sublinhado e caixa colorida. */
+.display .hot, .title .hot { color: var(--accent); }
+
+.body {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--muted);
+  margin: 0;
+  max-width: 30ch;
+}
+.body strong { color: var(--fg); font-weight: 600; }
+
+.caption {
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+  color: var(--ink-low);
+  margin: 0;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  font-weight: 500;
+  letter-spacing: var(--tr-eyebrow);
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.eyebrow::before {
+  content: "";
+  width: calc(var(--fs-eyebrow) * 1.6);
+  height: 2px;
+  background: var(--muted);
+  flex: none;
+}
+/* O filete do eyebrow em vermelho CONSOME uma das duas aparições do acento.
+   Use só quando a peça não tiver ênfase vermelha na manchete. */
+.eyebrow--hot::before { background: var(--accent); }
+
+/* Número: mono tabular, pt-BR (1.284 · 31,2%) */
+.metric {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--fs-mega);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--fg);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Componentes
+   ========================================================================== */
+
+/* CTA — um único primário por peça.
+   Texto branco sobre --accent atinge 3,96:1: use somente a partir de 24px/600
+   (regra de texto grande). O hover escurece o fundo e AUMENTA o contraste. */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: var(--s-4) var(--s-7);
+  border: 0;
+  border-radius: var(--r-pill);
+  background: var(--accent);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: max(24px, var(--fs-sm));
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--dur) var(--ease);
+}
+.cta:hover { background: var(--accent-press); color: var(--fg); }
+.cta:focus-visible { outline: 3px solid var(--fg); outline-offset: 3px; }
+
+/* Ação secundária — contorno, nunca um segundo botão sólido. */
+.cta-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: var(--s-4) var(--s-6);
+  border: 1px solid var(--accent);
+  border-radius: var(--r-pill);
+  background: transparent;
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: max(20px, var(--fs-sm));
+  font-weight: 600;
+  text-decoration: none;
+  transition: background var(--dur) var(--ease);
+}
+.cta-ghost:hover { background: var(--accent-soft); color: var(--fg); }
+.cta-ghost:focus-visible { outline: 3px solid var(--fg); outline-offset: 3px; }
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--s-2) var(--s-4);
+  border-radius: var(--r-sm);
+  background: var(--accent);
+  color: var(--fg);
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" var(--display-wdth), "wght" 700;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.tag--mono {
+  background: transparent;
+  border: var(--stroke);
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.card {
+  position: relative;
+  padding: var(--s-6);
+  border-radius: var(--r-md);
+  border: var(--stroke);
+  background: var(--surface);
+  box-shadow: var(--highlight);
+}
+
+.rule { height: 1px; background: var(--border); border: 0; margin: 0; }
+
+/* Cápsula de proteção da marca — logo nunca vai direto sobre foto. */
+.plate {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--s-3) var(--s-5);
+  border-radius: var(--r-md);
+  background: rgba(9, 7, 7, 0.82);
+  border: var(--stroke);
+  backdrop-filter: blur(8px);
+}
+.plate img { display: block; height: 100%; width: auto; }
+
+/* ==========================================================================
+   Imagem
+   ========================================================================== */
+
+/* Imagem de conteúdo: proporção real preservada. */
+.media { display: block; width: 100%; height: auto; border-radius: var(--r-md); }
+
+/* Preenchimento decorativo recortável — só fundo. */
+.media-fill { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Tratamento de foto da marca: dessatura e puxa para o quente. */
+.photo-grade { filter: saturate(0.55) contrast(1.08) brightness(0.92); }
+
+/* Véu obrigatório sob todo texto que cai sobre foto. */
+.veil {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to top,
+    var(--bg) 0%,
+    rgba(9, 7, 7, 0.94) 30%,
+    rgba(9, 7, 7, 0.55) 58%,
+    rgba(9, 7, 7, 0.10) 100%
+  );
+}
+
+/* Halo de acento — substitui sombra. Uma por peça, no máximo. */
+.glow-blob {
+  position: absolute;
+  width: 560px; height: 560px;
+  border-radius: var(--r-pill);
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 68%);
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Marquee — repetição calculada, nunca texto transbordando cortado.
+   A faixa vermelha CONSOME uma das duas aparições do acento.
+   ========================================================================== */
+.marquee {
+  position: absolute;
+  left: 0; right: 0;
+  display: flex;
+  overflow: hidden;
+  background: var(--accent);
+  padding: var(--s-3) 0;
+}
+.marquee__track {
+  display: flex;
+  flex: none;
+  gap: var(--s-6);
+  padding-right: var(--s-6);
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" var(--display-wdth), "wght" 700;
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--fg);
+}
+
+@media print {
+  body { background: none; }
+  .canvas { break-after: page; }
+  .glow-blob { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* ==========================================================================
+   CAMADA PREMIUM — o que separa "limpo" de "caro".
+   Regra: são camadas de atmosfera, não de cor. Nenhuma delas consome o
+   orçamento de duas aparições do acento.
+   ========================================================================== */
+
+/* 1. Grão de impressão. Tira o aspecto chapado do preto sólido.
+      Opacidade baixíssima: percebe-se a ausência, não a presença. */
+.grain {
+  position: absolute; inset: 0; pointer-events: none;
+  opacity: .30; mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='140' height='140' filter='url(%23n)' opacity='.42'/></svg>");
+}
+
+/* 2. Vinheta. Fecha as bordas e empurra o olho para o centro óptico. */
+.vignette {
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(120% 85% at 50% 38%, transparent 42%, rgba(0,0,0,.55) 100%);
+}
+
+/* 3. Moldura editorial: filete interno de 1px com marcas de canto. */
+.frame { position: absolute; inset: 44px; pointer-events: none;
+         border: 1px solid rgba(255,255,255,.09); }
+.frame::before, .frame::after {
+  content: ""; position: absolute; width: 26px; height: 26px;
+  border: 1px solid rgba(255,255,255,.28);
+}
+.frame::before { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
+.frame::after  { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
+
+/* 4. Linha de índice — carimbo de documento. Dá peso institucional. */
+.meta-line {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: var(--s-5);
+  font-family: var(--font-mono); font-size: calc(18px * var(--scale));
+  letter-spacing: .18em; text-transform: uppercase; color: var(--ink-low);
+}
+
+/* 5. Tratamento de foto da marca: dessatura e injeta o vermelho por
+      mistura de cor — é o que os criativos de referência já faziam.
+      Não conta como aparição do acento: é atmosfera, não sinalização. */
+.tint { position: relative; overflow: hidden; }
+.tint > img { width: 100%; height: 100%; object-fit: cover; display: block;
+              filter: grayscale(1) contrast(1.14) brightness(.82); }
+.tint::after {
+  content: ""; position: absolute; inset: 0;
+  background: var(--accent); mix-blend-mode: color; opacity: .30;
+}
+.tint--neutral::after { opacity: 0; }
+/* Foto com fundo CLARO vira rosa sob o tint. Esta variante escurece antes
+   de misturar a cor, mantendo o preto da marca. */
+.tint--deep > img { filter: grayscale(1) contrast(1.22) brightness(.52); }
+.tint--deep::after { opacity: .24; }
+
+/* 6. Filete que ancora o bloco de texto. NEUTRO por padrão: em vermelho ele
+      consumiria uma das duas aparições do acento em toda peça. */
+.hairline { width: 96px; height: 3px; background: var(--muted); border: 0; margin: 0; }
+.hairline--hot { background: var(--accent); }
+
+/* ==========================================================================
+   INFOGRÁFICO — densidade editorial.
+   O erro anterior foi tratar infográfico como "manchete + caixas cinzas".
+   Estas classes dão hierarquia e profundidade sem adicionar cor.
+   ========================================================================== */
+
+/* Passo numerado de leitura: índice grande em mono + conteúdo. */
+.step {
+  display: grid; grid-template-columns: 96px 1fr; gap: var(--s-6);
+  padding: var(--s-6) 0; border-top: 1px solid var(--border);
+  position: relative;
+}
+.step:last-child { border-bottom: 1px solid var(--border); }
+.step__n {
+  font-family: var(--font-mono); font-weight: 700; font-size: 46px;
+  line-height: 1; color: var(--border); letter-spacing: -.02em;
+}
+.step__verb {
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" 74, "wght" 800;
+  text-transform: uppercase; font-size: 44px; line-height: 1; margin: 0 0 10px;
+}
+.step__label { font-size: 26px; line-height: 1.35; color: var(--muted); margin: 0; }
+.step__meta {
+  font-family: var(--font-mono); font-size: 18px; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--ink-low); margin: 12px 0 0;
+}
+/* O passo em foco: acento no índice e halo. Consome UMA aparição. */
+.step--now { background: linear-gradient(90deg, var(--accent-soft), transparent 62%); }
+.step--now .step__n { color: var(--accent); }
+
+/* Faixa de fundamento: régua horizontal de itens separados por filete. */
+.foundation {
+  display: grid; grid-auto-flow: column; grid-auto-columns: 1fr;
+  border: 1px solid var(--border); border-radius: var(--r-md);
+  background: var(--surface); overflow: hidden;
+}
+.foundation > div { padding: var(--s-5) var(--s-5); border-left: 1px solid var(--border); }
+.foundation > div:first-child { border-left: 0; }
+.foundation b {
+  display: block; font-family: var(--font-mono); font-size: 17px;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--muted);
+  font-weight: 500; margin-bottom: 8px;
+}
+.foundation span { font-size: 22px; line-height: 1.35; color: var(--fg); }
+
+/* Bloco de leitura destacado — substitui a fileira de cards genéricos. */
+.readout {
+  display: grid; grid-template-columns: auto 1fr; gap: var(--s-6);
+  align-items: center; padding: var(--s-7);
+  border: 1px solid var(--border); border-radius: var(--r-lg);
+  background: linear-gradient(160deg, var(--surface-2), var(--surface));
+  box-shadow: var(--highlight);
+}

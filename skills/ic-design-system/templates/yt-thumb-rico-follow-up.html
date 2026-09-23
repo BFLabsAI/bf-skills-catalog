@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Thumb — HTML rico, follow-up</title>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="_layout.css">
+<style>
+.canvas { width:1280px; height:720px; --scale:1.05; --safe:70px; }
+.split-h { --photo-col: 44%; }
+.split-h__photo .tint > img { object-position: 54% 14%; }
+.safe { width:60%; justify-content:center; gap:22px; }
+.t { font-size:108px; }
+.bars { display:grid; gap:16px; width:460px; }
+.bar { display:grid; grid-template-columns:1fr auto; align-items:center; gap:20px; }
+.bar span { height:22px; border-radius:3px; background:var(--surface-2); display:block;
+  position:relative; overflow:hidden; }
+.bar span i { position:absolute; inset:0 auto 0 0; background:var(--muted); display:block; }
+.bar.hot span i { background:var(--accent); }
+.bar b { font-family:var(--font-mono); font-size:32px; color:var(--fg); font-weight:700;
+  min-width:70px; text-align:right; }
+.bar em { font-style:normal; font-family:var(--font-mono); font-size:15px;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--ink-low); }
+</style>
+</head>
+<body>
+<div class="canvas" data-od-id="canvas">
+  <div class="split-h" aria-hidden="true">
+    <div></div>
+    <div class="split-h__photo">
+      <div class="tint" style="height:100%">
+        <img src="../assets/fotos/retrato-serio-tijolo-01.jpg" width="1602" height="2400" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="frame" aria-hidden="true"></div>
+  <div class="safe">
+    <div class="meta-line" data-od-id="meta"><span>Base 04</span><span>Follow-up</span></div>
+    <h1 class="display t" data-od-id="headline">Ninguém<br><span class="hot">liga de novo.</span></h1>
+    <div class="bars" data-od-id="viz" aria-label="Contatos até desistir">
+      <div class="bar"><span><i style="width:100%"></i></span><b>48%</b></div>
+      <div class="bar"><span><i style="width:52%"></i></span><b>25%</b></div>
+      <div class="bar"><span><i style="width:25%"></i></span><b>12%</b></div>
+      <div class="bar hot"><span><i style="width:21%"></i></span><b>10%</b></div>
+    </div>
+  </div>
+  <div class="ts-guard" aria-hidden="true"></div>
+</div>
+</body>
+</html>

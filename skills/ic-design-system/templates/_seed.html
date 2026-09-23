@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Seed — Design System Ramon Pessoa</title>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="_layout.css">
+<style>
+  /* ÚNICO bloco que cada template edita.
+     1. dimensões do canvas + --scale + --safe (ver surfaces.md)
+     2. layout específico da peça, sempre com os tokens */
+  .canvas {
+    width: 1080px;
+    height: 1080px;
+    --scale: 1;
+    --safe: 96px;
+  }
+</style>
+</head>
+<body>
+
+<div class="canvas" data-od-id="canvas">
+  <div class="safe">
+
+    <p class="eyebrow" data-od-id="eyebrow">Categoria · Variação</p>
+
+    <div class="spacer"></div>
+
+    <div class="stack" data-od-id="main">
+      <h1 class="display" data-od-id="headline">
+        Linha branca<br><span class="hot">linha vermelha.</span>
+      </h1>
+      <p class="body" data-od-id="support">
+        Uma linha de apoio, concreta, com número real.
+      </p>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="row" data-od-id="footer">
+      <span class="plate" style="height:64px" data-od-id="brand">
+        <img src="../assets/derivadas/ic-lockup-escuro.png" width="1704" height="342"
+             alt="Programa Inteligência Comercial">
+      </span>
+      <div class="spacer"></div>
+      <a class="cta" href="#" data-od-id="cta">Inscreva-se agora</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

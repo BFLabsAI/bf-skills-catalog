@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>One-pager A4 — Proposta de mentoria</title>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="_layout.css">
+<style>
+.canvas { width:794px; height:1123px; --scale:.34; --safe:68px; }
+.safe { justify-content:flex-start; gap:20px; }
+.page-head img { height:26px; width:auto; display:block; }
+.page-head .caption, .page-foot .caption { font-size:11px; }
+.doc-h1 { font-family:var(--font-display); font-variation-settings:"wdth" 70,"wght" 800;
+  text-transform:uppercase; font-size:34px; line-height:1.02; letter-spacing:-.01em; margin:0; }
+.doc-h2 { font-family:var(--font-display); font-variation-settings:"wdth" 78,"wght" 700;
+  text-transform:uppercase; font-size:15px; letter-spacing:.06em; margin:0 0 8px; }
+.doc-p  { font-size:12px; line-height:1.5; color:var(--muted); margin:0; }
+.doc-p strong { color:var(--fg); font-weight:600; }
+.doc-lbl { font-family:var(--font-mono); font-size:10px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--muted); margin:0 0 6px; }
+.kpi { font-family:var(--font-mono); font-variant-numeric:tabular-nums;
+  font-size:30px; font-weight:700; line-height:1; margin:0; }
+.box { border:var(--stroke); border-radius:10px; padding:14px; background:var(--surface); }
+table { width:100%; border-collapse:collapse; font-size:11.5px; }
+th,td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--border);
+  vertical-align:top; line-height:1.4; }
+th { font-family:var(--font-mono); font-size:10px; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--muted); font-weight:500; }
+td { color:var(--muted); } td:first-child { color:var(--fg); font-weight:500; }
+</style>
+</head>
+<body>
+<div class="canvas page" data-od-id="canvas">
+  <div class="safe">
+    <div class="page-head" data-od-id="head">
+      <span class="plate" style="height:38px"><img src="../assets/derivadas/ic-lockup-escuro.png" width="1704" height="342" alt="Programa Inteligência Comercial"></span>
+      <p class="caption">Proposta comercial</p>
+    </div>
+
+    <p class="doc-lbl">Estruturação comercial · 90 dias</p>
+    <h1 class="doc-h1" data-od-id="title">Instalar o sistema<br><span class="hot">comercial da empresa</span></h1>
+    <p class="doc-p" style="max-width:62ch">
+      Programa de estruturação conduzido sobre as quatro bases do método, com
+      acompanhamento real e entregáveis auditáveis a cada ciclo.
+    </p>
+
+    <div data-od-id="escopo">
+      <h2 class="doc-h2">Escopo por ciclo</h2>
+      <table>
+        <thead><tr><th>Ciclo</th><th>Entregável</th><th>Indicador de saída</th></tr></thead>
+        <tbody>
+          <tr><td>Dias 1–30</td><td>Equação da meta e separação de regimes</td><td>Meta comercial e meta de gestão publicadas</td></tr>
+          <tr><td>Dias 31–60</td><td>Funil Ampulheta e 4 cadências no CRM</td><td>Atividades por estágio em operação</td></tr>
+          <tr><td>Dias 61–90</td><td>Painel de KPIs e rotina de follow-up</td><td>Forecast semanal com cadência até o 12º contato</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid-2" style="gap:12px" data-od-id="condicoes">
+      <div class="box">
+        <h2 class="doc-h2">O que está incluso</h2>
+        <p class="doc-p">Sessões de conselho com o time de liderança · Modelagem
+        da fauna comercial por cargo · Scripts do Bloco A/E · Painel de
+        indicadores · Acompanhamento entre sessões.</p>
+      </div>
+      <div class="box">
+        <h2 class="doc-h2">Pré-requisitos</h2>
+        <p class="doc-p">Faturamento a partir de <strong>R$ 30.000/mês</strong> ·
+        Sócio ou CEO presente nas sessões · Acesso ao histórico comercial dos
+        últimos 12 meses.</p>
+      </div>
+    </div>
+
+    <div class="box" data-od-id="proximo-passo">
+      <h2 class="doc-h2">Próximo passo</h2>
+      <p class="doc-p">Reunião de alinhamento de 45 minutos para validar o
+      diagnóstico e travar o cronograma dos três ciclos.</p>
+    </div>
+
+    <div class="spacer"></div>
+    <div class="page-foot" data-od-id="foot">
+      <p class="caption">Programa Inteligência Comercial® · Ramon Pessoa</p>
+      <p class="caption">Validade da proposta: 15 dias</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

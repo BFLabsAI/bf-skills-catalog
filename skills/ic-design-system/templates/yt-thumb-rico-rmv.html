@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Thumb — HTML rico, RMV</title>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="_layout.css">
+<style>
+.canvas { width:1280px; height:720px; --scale:1.05; --safe:70px; }
+.split-h { --photo-col: 46%; }
+.split-h__photo .tint > img { object-position: 42% 22%; }
+.safe { width:58%; justify-content:center; gap:22px; }
+.t { font-size:96px; }
+.podium { display:flex; align-items:flex-end; gap:14px; height:208px; margin-top:8px; }
+.podium i { display:block; width:92px; border-radius:4px 4px 0 0;
+  background:var(--surface-2); border:1px solid var(--border); position:relative; }
+.podium i.hot { background:var(--accent); border-color:var(--accent); }
+.podium em { position:absolute; left:0; right:0; top:-30px; font-style:normal;
+  font-family:var(--font-mono); font-size:20px; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--ink-low); text-align:center; }
+.podium i.hot em { color:var(--fg); }
+</style>
+</head>
+<body>
+<div class="canvas" data-od-id="canvas">
+  <div class="split-h" aria-hidden="true">
+    <div></div>
+    <div class="split-h__photo">
+      <div class="tint" style="height:100%">
+        <img src="../assets/fotos/conquista-bracos-erguidos.jpg" width="2400" height="1602" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="frame" aria-hidden="true"></div>
+  <div class="safe">
+    <div class="meta-line" data-od-id="meta"><span>Modelo Olímpico</span><span>RMV</span></div>
+    <h1 class="display t" data-od-id="headline">Recorde<br><span class="hot">mundial.</span></h1>
+    <div class="podium" data-od-id="viz" aria-label="Pódio: bronze, prata, ouro e RMV">
+      <i style="height:66px"><em>Bronze</em></i>
+      <i style="height:104px"><em>Prata</em></i>
+      <i style="height:150px"><em>Ouro</em></i>
+      <i class="hot" style="height:208px"><em>RMV</em></i>
+    </div>
+  </div>
+  <div class="ts-guard" aria-hidden="true"></div>
+</div>
+</body>
+</html>

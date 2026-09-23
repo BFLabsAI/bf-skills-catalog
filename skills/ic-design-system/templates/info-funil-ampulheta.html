@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Infográfico — Funil Ampulheta</title>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="_layout.css">
+<style>
+.canvas { width:1080px; height:auto; --scale:1; --safe:0; }
+.safe { position:relative; inset:auto; padding:0; gap:0; }
+.pad { padding:0 var(--s-10); }
+.h1 { font-size:96px; line-height:.94; }
+.deck { font-size:30px; line-height:1.45; color:var(--muted); max-width:40ch; margin:0; }
+.sect { padding-top:var(--s-9); }
+.foot { display:flex; align-items:center; justify-content:space-between; gap:var(--s-6);
+  padding:var(--s-8) var(--s-10) var(--s-10); }
+
+.viz text.nome { font-family:var(--font-mono); font-size:19px; letter-spacing:.12em;
+  fill:var(--muted); }
+.viz text.anot { font-family:var(--font-body); font-size:18px; fill:var(--ink-low); }
+.viz text.pivot { font-family:var(--font-display); font-size:30px; fill:#fff;
+  font-weight:800; letter-spacing:.04em; }
+.readout .metric { font-size:104px; }
+</style>
+</head>
+<body>
+<div class="canvas" data-od-id="canvas">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="safe">
+    <div class="pad" style="padding-top:var(--s-10)" data-od-id="head">
+      <div class="meta-line"><span>PIC® · Base 02</span><span>Receita previsível</span></div>
+      <hr class="hairline" style="margin:22px 0 26px">
+      <h1 class="display h1" data-od-id="headline">O funil não<br><span class="hot">acaba na venda.</span></h1>
+      <p class="deck" style="margin-top:26px">O funil tradicional encerra no contrato assinado.
+      O Funil Ampulheta continua — e é na metade de baixo que a margem aparece.</p>
+    </div>
+
+    <div class="pad sect">
+      <svg class="viz" viewBox="0 0 1000 830" role="img" data-od-id="viz-funil"
+           aria-label="Funil ampulheta: atração, oportunidade e conversão afunilam até a venda; depois retenção, lealdade e indicação se abrem novamente">
+        <defs>
+          <linearGradient id="band" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1E1818"/><stop offset="100%" stop-color="#151111"/>
+          </linearGradient>
+        </defs>
+      <g data-od-id="etapa-atração">
+        <polygon points="230.0,20 710.0,20 670.0,130 270.0,130" fill="url(#band)"/>
+        <polygon points="230.0,20 710.0,20 670.0,130 270.0,130" class="stroke-border"/>
+        <line x1="228" y1="75.0" x2="214.0" y2="75.0" stroke="var(--border)" stroke-width="1"/>
+        <text x="216" y="82.0" text-anchor="end" class="nome">ATRAÇÃO</text>
+        <text x="736.0" y="81.0" class="anot">Visitantes e reconhecimento</text>
+      </g>
+      <g data-od-id="etapa-oportunidade">
+        <polygon points="270.0,140 670.0,140 630.0,250 310.0,250" fill="url(#band)"/>
+        <polygon points="270.0,140 670.0,140 630.0,250 310.0,250" class="stroke-border"/>
+        <line x1="228" y1="195.0" x2="254.0" y2="195.0" stroke="var(--border)" stroke-width="1"/>
+        <text x="216" y="202.0" text-anchor="end" class="nome">OPORTUNIDADE</text>
+        <text x="696.0" y="201.0" class="anot">Leads qualificados · 30 atividades</text>
+      </g>
+      <g data-od-id="etapa-conversão">
+        <polygon points="310.0,260 630.0,260 590.0,370 350.0,370" fill="url(#band)"/>
+        <polygon points="310.0,260 630.0,260 590.0,370 350.0,370" class="stroke-border"/>
+        <line x1="228" y1="315.0" x2="294.0" y2="315.0" stroke="var(--border)" stroke-width="1"/>
+        <text x="216" y="322.0" text-anchor="end" class="nome">CONVERSÃO</text>
+        <text x="656.0" y="321.0" class="anot">Decisão de compra · 10 atividades</text>
+      </g>
+      <g data-od-id="etapa-venda">
+        <rect x="330" y="382" width="280" height="66" rx="8" class="fill-accent"/>
+        <text x="470" y="424" text-anchor="middle" class="pivot">VENDA</text>
+        <line x1="228" y1="415" x2="314" y2="415" stroke="var(--accent-line)" stroke-width="1"/>
+        <text x="216" y="421" text-anchor="end" class="nome" style="fill:var(--fg)">PONTO DE VIRADA</text>
+        <text x="636" y="421" class="anot" style="fill:var(--fg)">Onde o funil tradicional para</text>
+      </g>
+      <g data-od-id="etapa-retenção">
+        <polygon points="350.0,460 590.0,460 630.0,570 310.0,570" fill="url(#band)"/>
+        <polygon points="350.0,460 590.0,460 630.0,570 310.0,570" class="stroke-border"/>
+        <line x1="228" y1="515.0" x2="294.0" y2="515.0" stroke="var(--border)" stroke-width="1"/>
+        <text x="216" y="522.0" text-anchor="end" class="nome">RETENÇÃO</text>
+        <text x="656.0" y="521.0" class="anot">Fidelização · 5 atividades</text>
+      </g>
+      <g data-od-id="etapa-lealdade">
+        <polygon points="310.0,580 630.0,580 670.0,690 270.0,690" fill="url(#band)"/>
+        <polygon points="310.0,580 630.0,580 670.0,690 270.0,690" class="stroke-border"/>
+        <line x1="228" y1="635.0" x2="254.0" y2="635.0" stroke="var(--border)" stroke-width="1"/>
+        <text x="216" y="642.0" text-anchor="end" class="nome">LEALDADE</text>
+        <text x="696.0" y="641.0" class="anot">Recompra e upsell</text>
+      </g>
+      <g data-od-id="etapa-indicação">
+        <polygon points="270.0,700 670.0,700 710.0,810 230.0,810" fill="url(#band)"/>
+        <polygon points="270.0,700 670.0,700 710.0,810 230.0,810" class="stroke-border"/>
+        <line x1="228" y1="755.0" x2="214.0" y2="755.0" stroke="var(--border)" stroke-width="1"/>
+        <text x="216" y="762.0" text-anchor="end" class="nome">INDICAÇÃO</text>
+        <text x="736.0" y="761.0" class="anot">O cliente vira embaixador</text>
+      </g>
+      </svg>
+    </div>
+
+    <div class="pad sect" data-od-id="conclusao">
+      <div class="readout">
+        <p class="metric">4</p>
+        <div><p class="eyebrow" style="margin-bottom:10px">Cadências que sustentam o funil</p>
+          <p class="body" style="max-width:none;font-size:26px">Entrada · Agenda · Oportunidade ·
+          Base e embaixadores. Sem as quatro rodando, a metade de baixo da ampulheta
+          nunca se forma — e a indicação, que é a aquisição mais barata que existe,
+          simplesmente não acontece.</p></div>
+      </div>
+    </div>
+
+    <div class="foot" data-od-id="footer">
+      <span class="plate" style="height:60px"><img src="../assets/derivadas/ic-lockup-escuro.png" width="1704" height="342" alt="Programa Inteligência Comercial"></span>
+      <p class="caption" style="text-align:right">Método FCJ · funil, canal e jornada<br>
+      Volume de atividades por estágio do método</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

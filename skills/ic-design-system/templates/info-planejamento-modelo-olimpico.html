@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Infográfico — Modelo Olímpico</title>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="_layout.css">
+<style>
+.canvas { width:1080px; height:auto; --scale:1; --safe:0; }
+.safe { position:relative; inset:auto; padding:0; gap:0; }
+.pad { padding:0 var(--s-10); }
+.h1 { font-size:96px; line-height:.94; }
+.deck { font-size:30px; line-height:1.45; color:var(--muted); max-width:40ch; margin:0; }
+.sect { padding-top:var(--s-9); }
+.foot { display:flex; align-items:center; justify-content:space-between; gap:var(--s-6);
+  padding:var(--s-8) var(--s-10) var(--s-10); }
+
+.hero { position:relative; height:520px; overflow:hidden; }
+.hero__photo { position:absolute; top:0; right:0; bottom:0; width:48%; overflow:hidden; }
+.hero__photo .tint { height:100%; }
+.hero__photo .tint > img { object-position: 46% 8%; }
+.hero__photo::after { content:""; position:absolute; inset:0;
+  background:linear-gradient(to right, var(--bg) 0%, rgba(9,7,7,.94) 28%,
+             rgba(9,7,7,.34) 70%, transparent 100%); }
+.hero__txt { position:absolute; left:var(--s-10); bottom:var(--s-8); width:62%; }
+.viz text.deg { font-family:var(--font-display); font-size:30px; fill:var(--fg);
+  font-weight:800; letter-spacing:.03em; }
+.viz text.degsub { font-family:var(--font-body); font-size:17px; fill:var(--ink-low); }
+.eq { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center;
+  padding:var(--s-6); border:1px solid var(--border); border-radius:var(--r-md);
+  background:var(--surface); }
+.eq span { font-family:var(--font-mono); font-size:19px; letter-spacing:.06em;
+  color:var(--fg); }
+.eq i { font-style:normal; color:var(--border); font-size:20px; }
+</style>
+</head>
+<body>
+<div class="canvas" data-od-id="canvas">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="safe">
+    <div class="hero" data-od-id="hero">
+      <div class="hero__photo">
+        <div class="tint"><img src="../assets/fotos/conquista-bracos-erguidos.jpg"
+             width="2400" height="1602" alt="Ramon Pessoa comemorando"></div>
+      </div>
+      <div class="hero__txt">
+        <div class="meta-line"><span>Planejamento</span><span>Modelo Olímpico</span></div>
+        <hr class="hairline" style="margin:22px 0 26px">
+        <h1 class="display h1" data-od-id="headline">Quatro patamares<br>até o <span class="hot">recorde.</span></h1>
+      </div>
+    </div>
+
+    <div class="pad sect" data-od-id="intro">
+      <p class="deck">Uma meta só, quatro patamares. O time sabe exatamente onde está
+      e quanto falta para o degrau seguinte — é isso que transforma meta em disputa.</p>
+    </div>
+
+    <div class="pad sect">
+      <svg class="viz" viewBox="0 0 824 460" role="img" data-od-id="viz-podio"
+           aria-label="Pódio de quatro degraus crescentes: bronze, prata, ouro e RMV">
+        <defs><linearGradient id="step" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1E1818"/><stop offset="100%" stop-color="#151111"/>
+        </linearGradient></defs>
+        
+      <g data-od-id="degrau-bronze">
+        <text x="128" y="270" text-anchor="middle" class="deg">BRONZE</text>
+        <text x="128" y="294" text-anchor="middle" class="degsub">O mínimo aceitável</text>
+        <rect x="40" y="310" width="176" height="120" rx="8"
+              fill="url(#step)"/>
+        <rect x="40" y="310" width="176" height="120" rx="8" class="stroke-border"/>
+      </g>
+      <g data-od-id="degrau-prata">
+        <text x="324" y="200" text-anchor="middle" class="deg">PRATA</text>
+        <text x="324" y="224" text-anchor="middle" class="degsub">O plano do ano</text>
+        <rect x="236" y="240" width="176" height="190" rx="8"
+              fill="url(#step)"/>
+        <rect x="236" y="240" width="176" height="190" rx="8" class="stroke-border"/>
+      </g>
+      <g data-od-id="degrau-ouro">
+        <text x="520" y="122" text-anchor="middle" class="deg">OURO</text>
+        <text x="520" y="146" text-anchor="middle" class="degsub">O ano excepcional</text>
+        <rect x="432" y="162" width="176" height="268" rx="8"
+              fill="url(#step)"/>
+        <rect x="432" y="162" width="176" height="268" rx="8" class="stroke-border"/>
+      </g>
+      <g data-od-id="degrau-rmv">
+        <text x="716" y="30" text-anchor="middle" class="deg">RMV</text>
+        <text x="716" y="54" text-anchor="middle" class="degsub">O recorde da história</text>
+        <rect x="628" y="70" width="176" height="360" rx="8"
+              fill="var(--accent)"/>
+        <rect x="628" y="70" width="176" height="360" rx="8" class="stroke-border"/>
+      </g>
+        <line x1="30" y1="434" x2="794" y2="434" class="stroke-border"/>
+      </svg>
+    </div>
+
+    <div class="pad sect" data-od-id="equacao">
+      <div class="meta-line" style="margin-bottom:20px">
+        <span>A meta é uma equação</span><span>10 variáveis</span></div>
+      <div class="eq">
+        <span>capacidade fabril</span><i>×</i><span>capacidade humana</span><i>×</i>
+        <span>escala</span><i>×</i><span>tecnologia</span><i>×</i><span>sazonalidade</span><i>×</i>
+        <span>ticket médio</span><i>×</i><span>investimento</span><i>×</i>
+        <span>ano anterior</span><i>×</i><span>inflação</span><i>×</i>
+        <span>crescimento proposto</span>
+      </div>
+    </div>
+
+    <div class="foot" data-od-id="footer">
+      <span class="plate" style="height:60px"><img src="../assets/derivadas/ic-lockup-escuro.png" width="1704" height="342" alt="Programa Inteligência Comercial"></span>
+      <p class="caption" style="text-align:right">RMV — Recorde Mundial de Vendas<br>
+      O maior faturamento da história da empresa</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

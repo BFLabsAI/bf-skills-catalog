@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Story — Diagnóstico</title>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="_layout.css">
+<style>
+.canvas { width:1080px; height:1920px; --scale:1; --safe:96px; }
+.safe { top:250px; bottom:250px; justify-content:center; gap:var(--s-7); }
+.headline { font-size: calc(92px * var(--scale)); }
+.opts { display:grid; gap:var(--s-4); }
+.opt { padding:var(--s-5) var(--s-6); border:var(--stroke); border-radius:var(--r-md);
+  background:var(--surface); font-size:var(--fs-md); }
+.opt strong { font-family:var(--font-mono); color:var(--muted); margin-right:var(--s-4); }
+</style>
+</head>
+<body>
+<div class="canvas" data-od-id="canvas">
+  <div class="dead-top" aria-hidden="true"></div>
+  <div class="dead-bottom" aria-hidden="true"></div>
+  <div class="safe">
+    <p class="eyebrow eyebrow--hot" data-od-id="eyebrow">Enquete · Régua de maturidade</p>
+    <h1 class="display headline" data-od-id="headline">
+      Em que estágio<br>está sua empresa?
+    </h1>
+    <div class="opts" data-od-id="options">
+      <div class="opt" data-od-id="opt-bebe"><strong>A</strong>Bebê — sem histórico, só projeção</div>
+      <div class="opt" data-od-id="opt-adolescente"><strong>B</strong>Adolescente — dado parcial, resultado oscila</div>
+      <div class="opt" data-od-id="opt-adulto"><strong>C</strong>Adulto — histórico e processo maduros</div>
+    </div>
+    <p class="caption" data-od-id="hint">Responde aí. Amanhã eu mostro o que muda em cada estágio.</p>
+    <span class="plate start" style="height:64px" data-od-id="brand"><img src="../assets/derivadas/ic-lockup-escuro.png" width="1704" height="342" alt="Programa Inteligência Comercial"></span>
+  </div>
+</div>
+</body>
+</html>

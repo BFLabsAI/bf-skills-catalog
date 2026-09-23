@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Ad 16:9 — SIC x IC</title>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="_layout.css">
+<style>
+.canvas { width:1920px; height:1080px; --scale:1.6; --safe:110px; }
+.split-h { --photo-col: 40%; }
+.split-h__photo .tint > img { object-position: 56% 20%; }
+.safe { width:62%; gap:26px; }
+.headline { font-size:104px; }
+.compare { display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+.compare h3 { font-family:var(--font-mono); font-size:20px; letter-spacing:.16em;
+  text-transform:uppercase; margin:0 0 14px; padding-bottom:10px;
+  border-bottom:1px solid var(--border); }
+.compare ul { margin:0; padding:0; list-style:none; display:grid; gap:12px; }
+.compare li { font-size:26px; line-height:1.3; color:var(--muted);
+  padding-left:22px; position:relative; }
+.compare li::before { content:""; position:absolute; left:0; top:.55em;
+  width:8px; height:1px; background:var(--muted); }
+.ic h3 { color:var(--fg); } .ic li { color:var(--fg); }
+.ic li::before { background:var(--fg); }
+.sic h3 { color:var(--muted); }
+</style>
+</head>
+<body>
+<div class="canvas" data-od-id="canvas">
+  <div class="split-h" aria-hidden="true">
+    <div></div>
+    <div class="split-h__photo">
+      <div class="tint" style="height:100%">
+        <img src="../assets/fotos/convocacao-apontando.jpg" width="1602" height="2400" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="frame" aria-hidden="true"></div>
+  <div class="safe">
+    <div class="meta-line" data-od-id="meta">
+      <span>Diagnóstico</span><span>SIC × IC</span>
+    </div>
+    <div class="spacer"></div>
+    <hr class="hairline" data-od-id="rule">
+    <h1 class="display headline" data-od-id="headline">
+      Ou você tem processo,<br><span class="hot">ou você tem sorte.</span>
+    </h1>
+    <div class="compare" data-od-id="compare">
+      <div class="sic" data-od-id="col-sic">
+        <h3>Sem inteligência comercial</h3>
+        <ul><li>Meta é desejo, sem base matemática</li>
+            <li>Demanda depende de indicação passiva</li>
+            <li>Decisão por intuição</li>
+            <li>Vendedor desiste no 2º contato</li></ul>
+      </div>
+      <div class="ic" data-od-id="col-ic">
+        <h3>Com inteligência comercial</h3>
+        <ul><li>Meta calculada por 10 variáveis</li>
+            <li>Demanda previsível e omnichannel</li>
+            <li>Decisão por KPI e forecast</li>
+            <li>Cadência até o 12º contato</li></ul>
+      </div>
+    </div>
+    <div class="spacer"></div>
+    <div class="row row--between" data-od-id="footer">
+      <span class="plate" style="height:56px"><img src="../assets/derivadas/ic-lockup-escuro.png" width="1704" height="342" alt="Programa Inteligência Comercial"></span>
+      <a class="cta" href="#" data-od-id="cta">Fazer meu diagnóstico</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

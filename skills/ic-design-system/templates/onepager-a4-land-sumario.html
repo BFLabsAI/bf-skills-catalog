@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>One-pager A4 paisagem — Sumário executivo</title>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="_layout.css">
+<style>
+.canvas { width:1123px; height:794px; --scale:.34; --safe:68px; }
+.safe { justify-content:flex-start; gap:20px; }
+.page-head img { height:26px; width:auto; display:block; }
+.page-head .caption, .page-foot .caption { font-size:11px; }
+.doc-h1 { font-family:var(--font-display); font-variation-settings:"wdth" 70,"wght" 800;
+  text-transform:uppercase; font-size:34px; line-height:1.02; letter-spacing:-.01em; margin:0; }
+.doc-h2 { font-family:var(--font-display); font-variation-settings:"wdth" 78,"wght" 700;
+  text-transform:uppercase; font-size:15px; letter-spacing:.06em; margin:0 0 8px; }
+.doc-p  { font-size:12px; line-height:1.5; color:var(--muted); margin:0; }
+.doc-p strong { color:var(--fg); font-weight:600; }
+.doc-lbl { font-family:var(--font-mono); font-size:10px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--muted); margin:0 0 6px; }
+.kpi { font-family:var(--font-mono); font-variant-numeric:tabular-nums;
+  font-size:30px; font-weight:700; line-height:1; margin:0; }
+.box { border:var(--stroke); border-radius:10px; padding:14px; background:var(--surface); }
+table { width:100%; border-collapse:collapse; font-size:11.5px; }
+th,td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--border);
+  vertical-align:top; line-height:1.4; }
+th { font-family:var(--font-mono); font-size:10px; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--muted); font-weight:500; }
+td { color:var(--muted); } td:first-child { color:var(--fg); font-weight:500; }
+
+.safe { gap:16px; }
+</style>
+</head>
+<body>
+<div class="canvas page" data-od-id="canvas">
+  <div class="safe">
+    <div class="page-head" data-od-id="head">
+      <span class="plate" style="height:36px"><img src="../assets/derivadas/ic-lockup-escuro.png" width="1704" height="342" alt="Programa Inteligência Comercial"></span>
+      <p class="caption">Sumário executivo · Conselho</p>
+    </div>
+
+    <div class="row row--between" style="align-items:flex-end">
+      <div>
+        <p class="doc-lbl">Ciclo fechado</p>
+        <h1 class="doc-h1" data-od-id="title">Leitura executiva<br><span class="hot">das quatro bases</span></h1>
+      </div>
+      <p class="doc-p" style="max-width:44ch">
+        Painel de decisão para a reunião de conselho: estado de cada base,
+        gargalo dominante e a decisão pendente do trimestre.
+      </p>
+    </div>
+
+    <div class="grid-4" style="gap:12px" data-od-id="bases">
+      <div class="box"><p class="doc-lbl">Base 1 · Estruturando</p><p class="kpi">Ok</p><p class="doc-p" style="margin-top:6px">Equação da meta publicada e revisada por sazonalidade.</p></div>
+      <div class="box"><p class="doc-lbl">Base 2 · Construindo</p><p class="kpi">Ok</p><p class="doc-p" style="margin-top:6px">Funil Ampulheta com retenção e indicação ativas.</p></div>
+      <div class="box"><p class="doc-lbl">Base 3 · Otimizando</p><p class="kpi">Atenção</p><p class="doc-p" style="margin-top:6px">CAC e LTV medidos, payback ainda sem meta formal.</p></div>
+      <div class="box"><p class="doc-lbl">Base 4 · Controlando</p><p class="kpi">Gargalo</p><p class="doc-p" style="margin-top:6px">Cadência para no 3º contato na maior parte da base.</p></div>
+    </div>
+
+    <div class="grid-2" style="gap:14px" data-od-id="decisao">
+      <div class="box">
+        <h2 class="doc-h2">Gargalo dominante</h2>
+        <p class="doc-p">A Base 4 concentra a perda. Com 80% das vendas acontecendo
+        entre o 5º e o 12º contato, encerrar a cadência no 3º descarta a maior
+        parte da receita já gerada pelo topo do funil.</p>
+      </div>
+      <div class="box">
+        <h2 class="doc-h2">Decisão pendente</h2>
+        <p class="doc-p">Aprovar a cadência de base e embaixadores, com 30 atividades
+        para lead novo e 5 para cliente ativo, e definir o dono do indicador.</p>
+      </div>
+    </div>
+
+    <div class="spacer"></div>
+    <div class="page-foot" data-od-id="foot">
+      <p class="caption">Programa Inteligência Comercial® · Ramon Pessoa</p>
+      <p class="caption">Uso interno · Sala do Conselho</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

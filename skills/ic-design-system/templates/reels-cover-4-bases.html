@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Reels cover — Série 4 Bases</title>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="_layout.css">
+<style>
+.canvas { width:1080px; height:1920px; --scale:1; --safe:96px; }
+.safe { top:300px; bottom:300px; justify-content:center; gap:var(--s-6); }
+.headline { font-size: calc(150px * var(--scale)); line-height:.9; }
+.serie { display:grid; gap:var(--s-3); }
+.serie div { display:grid; grid-template-columns:auto 1fr; gap:var(--s-4);
+  align-items:baseline; font-size:var(--fs-md); color:var(--muted); }
+.serie b { font-family:var(--font-mono); color:var(--fg); font-size:var(--fs-sm); }
+.serie div.on { color:var(--fg); }
+</style>
+</head>
+<body>
+<div class="canvas" data-od-id="canvas">
+  <div class="reels-crop" aria-hidden="true"></div>
+  <div class="safe">
+    <p class="eyebrow eyebrow--hot" data-od-id="eyebrow">Série · 4 Bases do PIC</p>
+    <div class="spacer"></div>
+    <h1 class="display headline" data-od-id="headline">
+      Base 2<br>Receita<br>previsível
+    </h1>
+    <div class="serie" data-od-id="serie">
+      <div><b>01</b>Estruturando · Metas lucrativas</div>
+      <div class="on"><b>02</b>Construindo · Receita previsível</div>
+      <div><b>03</b>Otimizando · Crescimento estratégico</div>
+      <div><b>04</b>Controlando · Performance por indicadores</div>
+    </div>
+    <div class="spacer"></div>
+    <span class="plate start" style="height:60px" data-od-id="brand"><img src="../assets/derivadas/ic-lockup-escuro.png" width="1704" height="342" alt="Programa Inteligência Comercial"></span>
+  </div>
+</div>
+</body>
+</html>
